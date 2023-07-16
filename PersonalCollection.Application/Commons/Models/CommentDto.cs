@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalCollection.Domain.Commons
+namespace PersonalCollection.Application.Commons.Models
 {
-    public abstract class BaseEntity
+    internal class CommentDto
     {
-        public Guid Id { get; set; }
     }
-
 }

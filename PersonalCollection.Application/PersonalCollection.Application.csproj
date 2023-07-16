@@ -11,7 +11,6 @@
   </ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="Commons\Interfaces\" />
     <Folder Include="Commons\Mapping\" />
     <Folder Include="Commons\Models\" />
     <Folder Include="UseCases\" />
@@ -20,6 +19,7 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.6.0" />
     <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="Serilog" Version="3.0.1" />
   </ItemGroup>
 

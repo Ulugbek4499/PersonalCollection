@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace PersonalCollection.Domain.States
 {
-    internal class TopicType
+
+    public enum TopicType
     {
+        Coca_Cola_Cans,
+        Books,
+        Beverage,
+        Moneta
     }
+
 }

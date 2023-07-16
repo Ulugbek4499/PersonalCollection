@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalCollection.Domain.Commons
+namespace PersonalCollection.Application.Commons.Interfaces
 {
-    public abstract class BaseEntity
+    internal interface IGuidGenerator
     {
-        public Guid Id { get; set; }
     }
-
 }
