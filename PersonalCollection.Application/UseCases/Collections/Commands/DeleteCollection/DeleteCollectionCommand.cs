@@ -12,23 +12,30 @@ namespace PersonalCollection.Application.UseCases.Collections.Commands.DeleteCol
     public class DeleteCollectionCommandHandler : IRequestHandler<DeleteCollectionCommand, CollectionDto>
     {
         private readonly IApplicationDbContext _context;
-        private readonly IMapper _mapper;
+        private readonly IMapper _mapper; 
+        private readonly ICurrentUserService _currentUserService;
 
-        public DeleteCollectionCommandHandler(IApplicationDbContext context, IMapper mapper)
+        public DeleteCollectionCommandHandler(IApplicationDbContext context, IMapper mapper, ICurrentUserService currentUserService)
         {
             _context = context;
             _mapper = mapper;
+            _currentUserService = currentUserService;
         }
 
         public async Task<CollectionDto> Handle(DeleteCollectionCommand request, CancellationToken cancellationToken)
         {
-            Collection maybeCollection = await
-                  _context.Collections.FindAsync(new object[] { request.emploeeId });
+
+            Collection maybeCollection = await _context.Collections.FindAsync(new object[] { request.collectionId });
 
             ValidateDepartmentIsNotNull(request, maybeCollection);
 
-            _context.Collections.Remove(maybeCollection);
+            // Check if the CreatedBy field of the collection matches the Id of the current user
+            if (maybeCollection.CreatedBy != _currentUserService.Id)
+            {
+                throw new UnauthorizedException("User could not delete this collection.");
+            }
 
+            _context.Collections.Remove(maybeCollection);
             await _context.SaveChangesAsync(cancellationToken);
 
             return _mapper.Map<CollectionDto>(maybeCollection);

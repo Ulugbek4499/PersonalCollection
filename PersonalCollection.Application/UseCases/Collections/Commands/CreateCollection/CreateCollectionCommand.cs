@@ -42,7 +42,8 @@ namespace PersonalCollection.Application.UseCases.Collections.Commands.CreateCol
                 Name=request.Name,
                 Description=request.Description,
                 Image=request.Image,
-                Topic=request.Topic
+                Topic=request.Topic,
+                CreatedBy=_userService.Id
             };
 
             maybeCollection=_context.Collections.Add(collection).Entity;
