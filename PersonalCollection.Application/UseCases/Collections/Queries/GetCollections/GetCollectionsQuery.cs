@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalCollection.Application.Commons.Interfaces
+namespace PersonalCollection.Application.UseCases.Collections.Queries.GetCollections
 {
-    public interface IGuidGenerator
+    internal class GetCollectionsQuery
     {
-        Guid Id { get; }
     }
 }

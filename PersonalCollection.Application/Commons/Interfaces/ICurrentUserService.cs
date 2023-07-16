@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PersonalCollection.Application.Commons.Interfaces
 {
-    public interface IGuidGenerator
+    public interface ICurrentUserService
     {
-        Guid Id { get; }
+        public string? Id { get; set; }
     }
 }

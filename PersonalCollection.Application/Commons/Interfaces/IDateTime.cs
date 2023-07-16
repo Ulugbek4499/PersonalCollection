@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PersonalCollection.Application.Commons.Interfaces
 {
-    internal interface IDateTime
+    public interface IDateTime
     {
+        DateTime Now { get; }
     }
 }
