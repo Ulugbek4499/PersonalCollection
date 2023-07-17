@@ -1,3 +1,6 @@
+using PersonalCollection.Application.Commons.Interfaces;
+using PersonalCollection.MVC.Services;
+
 namespace PersonalCollection.MVC
 {
     public class Program
@@ -8,6 +11,7 @@ namespace PersonalCollection.MVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ICurrentUserService, CurrentUser>();
 
             var app = builder.Build();
 

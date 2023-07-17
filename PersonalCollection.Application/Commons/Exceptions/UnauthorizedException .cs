@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace PersonalCollection.Application.Commons.Exceptions
 {
-    internal class UnauthorizedException
+    public class UnauthorizedException : Exception
     {
+        public UnauthorizedException(string message) : base(message)
+        {
+        }
+
+        public UnauthorizedException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

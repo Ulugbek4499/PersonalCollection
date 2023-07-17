@@ -37,7 +37,7 @@ namespace PersonalCollection.Application.UseCases.Collections.Commands.UpdateCol
 
             if (maybeCollection.CreatedBy != _currentUserService.Id)
             {
-                throw new UnauthorizedException("User could not delete this collection.");
+                throw new UnauthorizedException("User could not update this collection.");
             }
 
             ValidateCollectionIsNotNull(request, maybeCollection);
