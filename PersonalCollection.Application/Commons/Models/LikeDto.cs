@@ -9,7 +9,7 @@ namespace PersonalCollection.Application.Commons.Models
 {
     public class LikeDto
     {
-        public virtual ICollection<CollectionDto> Collections { get; set; }
-        public virtual ICollection<ItemDto> Items { get; set; }
+        public Guid Id { get; set; }
+        public ItemDto Item { get; set; }
     }
 }

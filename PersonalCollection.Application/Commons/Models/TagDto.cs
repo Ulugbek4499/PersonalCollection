@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PersonalCollection.Domain.Entities;
 
 namespace PersonalCollection.Application.Commons.Models
 {
     public class TagDto
     {
+        public Guid Id { get; set; }
         public string? Name { get; set; }
-     //   public Guid CollectionId { get; set; }
-        public virtual CollectionDto? Collection { get; set; }
+        public virtual ICollection<ItemTagDto> ItemTags { get; set; }
     }
 }
