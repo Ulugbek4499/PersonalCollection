@@ -8,7 +8,7 @@ using PersonalCollection.Domain.States;
 
 namespace PersonalCollection.Application.UseCases.Collections.Commands.UpdateCollection
 {
-    public class UpdateCollectionCommand:IRequest<CollectionDto>
+    public class UpdateCollectionCommand : IRequest<CollectionDto>
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }
@@ -43,7 +43,7 @@ namespace PersonalCollection.Application.UseCases.Collections.Commands.UpdateCol
             ValidateCollectionIsNotNull(request, maybeCollection);
 
             maybeCollection.Name = request.Name;
-            maybeCollection.Description= request.Description;
+            maybeCollection.Description = request.Description;
             maybeCollection.Image = request.Image;
             maybeCollection.Topic = request.Topic;
 

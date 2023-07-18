@@ -4,7 +4,7 @@ using MediatR;
 
 namespace PersonalCollection.Application.Commons.Behaviours
 {
-    public class ValidationBehaviour<TRequest, TResponse> :IPipelineBehavior<TRequest, TResponse> where TRequest : notnull 
+    public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
 
@@ -20,7 +20,7 @@ namespace PersonalCollection.Application.Commons.Behaviours
                 ValidationContext<TRequest> context = new ValidationContext<TRequest>(request);
 
                 ValidationResult[] validationResults = await Task.WhenAll(
-                    _validators.Select(v => 
+                    _validators.Select(v =>
                     v.ValidateAsync(context, cancellationToken)));
 
                 List<ValidationFailure> failures = validationResults
@@ -31,7 +31,7 @@ namespace PersonalCollection.Application.Commons.Behaviours
                 if (failures.Any())
                     throw new ValidationException(failures);
             }
-            
+
             return await next();
         }
 

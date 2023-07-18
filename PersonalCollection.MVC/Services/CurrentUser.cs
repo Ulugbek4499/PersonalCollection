@@ -1,5 +1,5 @@
-﻿using PersonalCollection.Application.Commons.Interfaces;
-using System.Security.Claims;
+﻿using System.Security.Claims;
+using PersonalCollection.Application.Commons.Interfaces;
 
 namespace PersonalCollection.MVC.Services
 {

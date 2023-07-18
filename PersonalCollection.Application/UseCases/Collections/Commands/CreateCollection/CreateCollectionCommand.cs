@@ -39,17 +39,17 @@ namespace PersonalCollection.Application.UseCases.Collections.Commands.CreateCol
 
             var collection = new Collection()
             {
-                Name=request.Name,
-                Description=request.Description,
-                Image=request.Image,
-                Topic=request.Topic,
-                CreatedBy=_userService.Id
+                Name = request.Name,
+                Description = request.Description,
+                Image = request.Image,
+                Topic = request.Topic,
+                CreatedBy = _userService.Id
             };
 
-            maybeCollection=_context.Collections.Add(collection).Entity;
+            maybeCollection = _context.Collections.Add(collection).Entity;
             await _context.SaveChangesAsync(cancellationToken);
 
-            return _mapper.Map<CollectionDto>(maybeCollection); 
+            return _mapper.Map<CollectionDto>(maybeCollection);
         }
 
         private void ValidateCollectionIsNull(CreateCollectionCommand request, Collection? maybeCollection)
@@ -61,4 +61,3 @@ namespace PersonalCollection.Application.UseCases.Collections.Commands.CreateCol
         }
     }
 }
-    

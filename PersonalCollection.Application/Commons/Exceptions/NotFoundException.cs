@@ -1,6 +1,6 @@
 ﻿namespace PersonalCollection.Application.Commons.Exceptions
 {
-    public class NotFoundException:Exception
+    public class NotFoundException : Exception
     {
         public NotFoundException() : base() { }
 

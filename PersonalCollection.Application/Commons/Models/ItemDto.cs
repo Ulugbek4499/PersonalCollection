@@ -1,6 +1,4 @@
-﻿using PersonalCollection.Domain.Entities;
-
-namespace PersonalCollection.Application.Commons.Models
+﻿namespace PersonalCollection.Application.Commons.Models
 {
     public class ItemDto
     {

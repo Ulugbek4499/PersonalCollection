@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PersonalCollection.Domain.Entities;
-
-namespace PersonalCollection.Application.Commons.Models
+﻿namespace PersonalCollection.Application.Commons.Models
 {
     public class ItemTagDto
     {

@@ -4,12 +4,12 @@ using PersonalCollection.Domain.Entities;
 
 namespace PersonalCollection.Application.Commons.Mapping
 {
-    public class MappingProfile:Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
             CreateMap<Collection, CollectionDto>().ReverseMap();
-            CreateMap<Comment,CommentDto> ().ReverseMap();
+            CreateMap<Comment, CommentDto>().ReverseMap();
             CreateMap<CustomField, CustomFieldDto>();
             CreateMap<CustomFieldValue, CustomFieldValueDto>();
             CreateMap<Item, ItemDto>().ReverseMap();

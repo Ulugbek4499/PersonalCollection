@@ -12,7 +12,7 @@ namespace PersonalCollection.Application.UseCases.Collections.Commands.DeleteCol
     public class DeleteCollectionCommandHandler : IRequestHandler<DeleteCollectionCommand, CollectionDto>
     {
         private readonly IApplicationDbContext _context;
-        private readonly IMapper _mapper; 
+        private readonly IMapper _mapper;
         private readonly ICurrentUserService _currentUserService;
 
         public DeleteCollectionCommandHandler(IApplicationDbContext context, IMapper mapper, ICurrentUserService currentUserService)

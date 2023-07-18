@@ -2,14 +2,14 @@
 
 namespace PersonalCollection.Application.Commons.Exceptions
 {
-    public class ValidationException:Exception
+    public class ValidationException : Exception
     {
         public IDictionary<string, string[]> Errors { get; set; }
 
-        public ValidationException() 
-            : base("One or more validation failures have occured.") 
+        public ValidationException()
+            : base("One or more validation failures have occured.")
         {
-            Errors=new Dictionary<string, string[]>();
+            Errors = new Dictionary<string, string[]>();
         }
 
         public ValidationException(string name, string message)
