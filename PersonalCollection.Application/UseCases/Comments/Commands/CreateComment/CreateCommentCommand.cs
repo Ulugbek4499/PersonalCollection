@@ -13,13 +13,13 @@ namespace PersonalCollection.Application.UseCases.Comments.Commands.CreateComman
         public Guid ItemId { get; set; }
     }
 
-    public class CreateCommandCommandHandler : IRequestHandler<CreateCommentCommand, CommentDto>
+    public class CreateCommentCommandHandler : IRequestHandler<CreateCommentCommand, CommentDto>
     {
 
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
 
-        public CreateCommandCommandHandler(IApplicationDbContext context, IMapper mapper)
+        public CreateCommentCommandHandler(IApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

@@ -8,48 +8,43 @@ using MediatR;
 using PersonalCollection.Application.Commons.Exceptions;
 using PersonalCollection.Application.Commons.Interfaces;
 using PersonalCollection.Application.Commons.Models;
+using PersonalCollection.Domain.Entities;
 
 namespace PersonalCollection.Application.UseCases.Comments.Commands.DeleteCommand
 {
-    public record DeleteCollectionCommand(Guid collectionId) : IRequest<CollectionDto>;
+    public record DeleteCommentCommand(Guid commentId) : IRequest<CommentDto>;
 
-    public class DeleteCollectionCommandHandler : IRequestHandler<DeleteCollectionCommand, CollectionDto>
+    public class DeleteCommentCommandHandler : IRequestHandler<DeleteCommentCommand, CommentDto>
     {
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly ICurrentUserService _currentUserService;
 
-        public DeleteCollectionCommandHandler(IApplicationDbContext context, IMapper mapper, ICurrentUserService currentUserService)
+        public DeleteCommentCommandHandler(IApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
-            _currentUserService = currentUserService;
         }
 
-        public async Task<CollectionDto> Handle(DeleteCollectionCommand request, CancellationToken cancellationToken)
+        public async Task<CommentDto> Handle(DeleteCommentCommand request, CancellationToken cancellationToken)
         {
+            Comment maybeComment = await
+                  _context.Comments.FindAsync(new object[] { request.commentId });
 
-            Collection maybeCollection = await _context.Collections.FindAsync(new object[] { request.collectionId });
+            ValidateCommentIsNotNull(request, maybeComment);
 
-            ValidateDepartmentIsNotNull(request, maybeCollection);
+            _context.Comments.Remove(maybeComment);
 
-            // Check if the CreatedBy field of the collection matches the Id of the current user
-            if (maybeCollection.CreatedBy != _currentUserService.Id)
-            {
-                throw new UnauthorizedException("User could not delete this collection.");
-            }
-
-            _context.Collections.Remove(maybeCollection);
             await _context.SaveChangesAsync(cancellationToken);
 
-            return _mapper.Map<CollectionDto>(maybeCollection);
+
+            return _mapper.Map<CommentDto>(maybeComment);
         }
 
-        private static void ValidateDepartmentIsNotNull(DeleteCollectionCommand request, Collection maybeCollection)
+        private static void ValidateCommentIsNotNull(DeleteCommentCommand request, Comment maybeComment)
         {
-            if (maybeCollection is null)
+            if (maybeComment is null)
             {
-                throw new NotFoundException(nameof(Collection), request.collectionId);
+                throw new NotFoundException(nameof(Comment), request.commentId);
             }
         }
     }
