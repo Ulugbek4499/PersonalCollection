@@ -11,6 +11,5 @@ namespace PersonalCollection.Domain.Entities
             public TopicType? Topic { get; set; }
             public virtual ICollection<CustomField> CustomFields { get; set; }
             public virtual ICollection<Item>? Items { get; set; }
-            public virtual ICollection<Like> Likes { get; set; }
         }
 }

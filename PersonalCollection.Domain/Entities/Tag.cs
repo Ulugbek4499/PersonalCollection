@@ -10,7 +10,6 @@ namespace PersonalCollection.Domain.Entities
     public class Tag : BaseAuditableEntity
     {
         public string? Name { get; set; }
-        public Guid CollectionId { get; set; } 
-        public virtual Collection? Collection { get; set; } 
+        public virtual ICollection<ItemTag> ItemTags { get; set; }
     }
 }
