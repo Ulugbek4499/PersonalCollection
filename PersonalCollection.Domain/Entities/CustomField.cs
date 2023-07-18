@@ -11,7 +11,6 @@ namespace PersonalCollection.Domain.Entities
     public class CustomField:BaseAuditableEntity
     {
         public string? Name { get; set; }
-        public string? Type { get; set; }
         public Guid CollectionId { get; set; }
         public Collection? Collection { get; set; }
         public virtual ICollection<CustomFieldValue>? CustomFieldValues { get; set; }
