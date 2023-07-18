@@ -9,10 +9,28 @@ namespace PersonalCollection.Domain.States
 
     public enum TopicType
     {
-        Coca_Cola_Cans,
         Books,
-        Beverage,
-        Moneta
+        PostStamps,
+        Whiskeys,
+        Coins,
+        Paintings,
+        Antiques,
+        Comics,
+        Movies,
+        Music,
+        VideoGames,
+        SportsMemorabilia,
+        TradingCards,
+        Jewelry,
+        Toys,
+        Autographs,
+        CollectibleFigurines,
+        Wine,
+        VinylRecords,
+        Photography,
+        Fashion,
+        Pottery,
+        Sculptures
     }
 
 }

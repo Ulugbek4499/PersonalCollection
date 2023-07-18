@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PersonalCollection.Domain.Entities
 {
-    internal class CustomFieldValue
+    public class CustomFieldValue
     {
+        public Guid CustomFieldId { get; set; }
+        public CustomField CustomField { get; set; }
+        public Guid ItemId { get; set; }
+        public Item? Item { get; set; }
+        public string? Value { get; set; }
     }
 }
