@@ -18,19 +18,13 @@ namespace PersonalCollection.Domain.States
         Comics,
         Movies,
         Music,
-        VideoGames,
-        SportsMemorabilia,
         TradingCards,
         Jewelry,
         Toys,
         Autographs,
-        CollectibleFigurines,
         Wine,
-        VinylRecords,
         Photography,
-        Fashion,
-        Pottery,
-        Sculptures
+        RetroCars,
+        Others
     }
-
 }
