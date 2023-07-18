@@ -21,9 +21,6 @@
 	
   <ItemGroup>
     <Folder Include="Commons\Mapping\" />
-    <Folder Include="UseCases\Comments\Commands\UpdateCommand\" />
-    <Folder Include="UseCases\Comments\Queries\GetComments\" />
-    <Folder Include="UseCases\Comments\Queries\GetComment\" />
     <Folder Include="UseCases\Items\Commands\CreateItem\" />
     <Folder Include="UseCases\Items\Commands\DeleteItem\" />
     <Folder Include="UseCases\Items\Commands\UpdateItem\" />
