@@ -21,7 +21,6 @@
 	
   <ItemGroup>
     <Folder Include="Commons\Mapping\" />
-    <Folder Include="UseCases\Items\Commands\CreateItem\" />
     <Folder Include="UseCases\Items\Commands\DeleteItem\" />
     <Folder Include="UseCases\Items\Commands\UpdateItem\" />
     <Folder Include="UseCases\Items\Queries\GetItems\" />
@@ -31,11 +30,6 @@
     <Folder Include="UseCases\Likes\Commands\UpdateItem\" />
     <Folder Include="UseCases\Likes\Queries\GetItems\" />
     <Folder Include="UseCases\Likes\Queries\GetItem\" />
-    <Folder Include="UseCases\Tags\Commands\CreateItem\" />
-    <Folder Include="UseCases\Tags\Commands\DeleteItem\" />
-    <Folder Include="UseCases\Tags\Commands\UpdateItem\" />
-    <Folder Include="UseCases\Tags\Queries\GetTags\" />
-    <Folder Include="UseCases\Tags\Queries\GetTag\" />
   </ItemGroup>
 
   <ItemGroup>
