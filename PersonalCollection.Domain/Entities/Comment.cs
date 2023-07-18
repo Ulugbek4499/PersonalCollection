@@ -6,6 +6,6 @@ namespace PersonalCollection.Domain.Entities
     {
         public string? Content { get; set; }
         public Guid ItemId { get; set; }
-        public Item? Item { get; set; }
+        public virtual Item? Item { get; set; }
     }
 }

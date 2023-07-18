@@ -7,7 +7,7 @@ namespace PersonalCollection.Domain.Entities
         public string? Name { get; set; }
         public string? Image { get; set; }
         public Guid CollectionId { get; set; }
-        public Collection? Collection { get; set; }
+        public virtual Collection? Collection { get; set; }
         public virtual ICollection<CustomFieldValue>? CustomFieldValues { get; set; }
         public virtual ICollection<Comment>? Comments { get; set; }
         public virtual ICollection<Like> Likes { get; set; }

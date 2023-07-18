@@ -12,7 +12,7 @@ namespace PersonalCollection.Domain.Entities
     {
         public string? Name { get; set; }
         public Guid CollectionId { get; set; }
-        public Collection? Collection { get; set; }
+        public virtual Collection? Collection { get; set; }
         public virtual ICollection<CustomFieldValue>? CustomFieldValues { get; set; }
     }
 }
