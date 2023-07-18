@@ -7,13 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UseCases\Comments\Commands\CreateCommand\**" />
+    <Compile Remove="UseCases\Comments\Commands\DeleteCommand\**" />
+    <EmbeddedResource Remove="UseCases\Comments\Commands\CreateCommand\**" />
+    <EmbeddedResource Remove="UseCases\Comments\Commands\DeleteCommand\**" />
+    <None Remove="UseCases\Comments\Commands\CreateCommand\**" />
+    <None Remove="UseCases\Comments\Commands\DeleteCommand\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PersonalCollection.Domain\PersonalCollection.Domain.csproj" />
   </ItemGroup>
 	
   <ItemGroup>
     <Folder Include="Commons\Mapping\" />
-    <Folder Include="UseCases\Comments\Commands\CreateCommand\" />
-    <Folder Include="UseCases\Comments\Commands\DeleteCommand\" />
     <Folder Include="UseCases\Comments\Commands\UpdateCommand\" />
     <Folder Include="UseCases\Comments\Queries\GetComments\" />
     <Folder Include="UseCases\Comments\Queries\GetComment\" />
